@@ -14,9 +14,9 @@ public class Pvalue {
 
     private String name;
 
-    private String tid;
+    private Long tid;
 
-    private String companyId;
+    private Long companyId;
 
     public Long getVid() {
         return vid;
@@ -42,19 +42,19 @@ public class Pvalue {
         this.name = name;
     }
 
-    public String getTid() {
+    public Long getTid() {
         return tid;
     }
 
-    public void setTid(String tid) {
+    public void setTid(Long tid) {
         this.tid = tid;
     }
 
-    public String getCompanyId() {
+    public Long getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(String companyId) {
+    public void setCompanyId(Long companyId) {
         this.companyId = companyId;
     }
 

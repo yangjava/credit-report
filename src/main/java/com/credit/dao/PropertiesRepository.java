@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface PropertiesRepository extends JpaRepository<Properties,Long> {
 
-    List<Properties> findByPidAndParentPidAndParentVidAndTid(Long pid,Long parentPid,Long parentVid,Long tid);
+//    List<Properties> findByPidAndParentPidAndParentVidAndTid(Long pid,Long parentPid,Long parentVid,Long tid);
 
-    List<Properties> findByParentPidAndTid(Long parentPid,Long tid);
+    List<Properties> findByParentPidAndParentVidAndTid(Long parentPid,Long parentVid,Long tid);
 }

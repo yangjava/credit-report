@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 11/07/2019 13:46:05
+ Date: 11/07/2019 17:22:10
 */
 
 SET NAMES utf8mb4;
@@ -67,7 +67,7 @@ CREATE TABLE `pvalue`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '属性值',
   `tid` bigint(255) DEFAULT NULL COMMENT '模板ID',
   `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '模板值状态',
-  `companyId` int(11) DEFAULT NULL COMMENT '公司ID',
+  `company_id` bigint(11) DEFAULT NULL COMMENT '公司ID',
   PRIMARY KEY (`vid`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 

@@ -20,7 +20,7 @@ public class Properties {
 
     private String sortOrder;
 
-
+    private String name;
 
     public Long getPid() {
         return pid;
@@ -70,4 +70,11 @@ public class Properties {
         this.sortOrder = sortOrder;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
