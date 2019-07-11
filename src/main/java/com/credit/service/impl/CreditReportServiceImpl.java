@@ -5,7 +5,6 @@ import com.credit.dao.PvalueRepository;
 import com.credit.dao.TemplateRepository;
 import com.credit.entity.Properties;
 import com.credit.entity.Pvalue;
-import com.credit.entity.Template;
 import com.credit.service.CreditReportService;
 import com.credit.vo.PropertiesVo;
 import com.credit.vo.PvalueVo;
@@ -40,26 +39,26 @@ public class CreditReportServiceImpl implements CreditReportService {
     }
 
 
-    public List<PropertiesVo> getPropertiesVo(PropertiesVo propertiesVo,Long companyId){
-        List<PropertiesVo> propertiesVoList=new ArrayList<>();
-        List<Properties> propertiesList = propertiesRepository
-                .findByParentPidAndParentVidAndTid
-                        (propertiesVo.getPid(), propertiesVo.getParentPid(), propertiesVo.getTid());
-        propertiesList.stream().forEach(properties -> {
-            PropertiesVo propertiesVo1=new PropertiesVo();
-            BeanUtils.copyProperties(properties,propertiesVo1);
-            List<Pvalue> pvalues = pvalueRepository.findByPidAndTidAndCompanyId(properties.getPid(), properties.getTid(), companyId);
-            List<PvalueVo> pvalueVos=new ArrayList<>();
-            pvalues.stream().forEach(pvalue ->{
-                PvalueVo pvalueVo=new PvalueVo();
-                BeanUtils.copyProperties(pvalue,pvalueVo);
-                pvalueVos.add(pvalueVo);
-            });
-            propertiesVo1.setPvalueVoList(pvalueVos);
-            propertiesVoList.add(propertiesVo1);
-        });
-        return propertiesVoList;
-    }
+//    public List<PropertiesVo> getPropertiesVo(PropertiesVo propertiesVo,Long companyId){
+//        List<PropertiesVo> propertiesVoList=new ArrayList<>();
+//        List<Properties> propertiesList = propertiesRepository
+//                .findByParentPidAndParentVidAndTid
+//                        (propertiesVo.getPid(), propertiesVo.getParentPid(), propertiesVo.getTid());
+//        propertiesList.stream().forEach(properties -> {
+//            PropertiesVo propertiesVo1=new PropertiesVo();
+//            BeanUtils.copyProperties(properties,propertiesVo1);
+//            List<Pvalue> pvalues = pvalueRepository.findByPidAndTidAndCompanyId(properties.getPid(), properties.getTid(), companyId);
+//            List<PvalueVo> pvalueVos=new ArrayList<>();
+//            pvalues.stream().forEach(pvalue ->{
+//                PvalueVo pvalueVo=new PvalueVo();
+//                BeanUtils.copyProperties(pvalue,pvalueVo);
+//                pvalueVos.add(pvalueVo);
+//            });
+//            propertiesVo1.setPvalueVoList(pvalueVos);
+//            propertiesVoList.add(propertiesVo1);
+//        });
+//        return propertiesVoList;
+//    }
 
 
     public List<PvalueVo> getpvalue(List<PvalueVo> pvalueVos){
