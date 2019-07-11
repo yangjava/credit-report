@@ -11,7 +11,7 @@
  Target Server Version : 50725
  File Encoding         : 65001
 
- Date: 11/07/2019 17:22:10
+ Date: 11/07/2019 19:42:06
 */
 
 SET NAMES utf8mb4;
@@ -30,7 +30,7 @@ CREATE TABLE `properties`  (
   `sort_order` int(255) DEFAULT NULL COMMENT '排序',
   `tid` int(11) DEFAULT NULL COMMENT '模板ID',
   PRIMARY KEY (`pid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 34 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of properties
@@ -56,6 +56,16 @@ INSERT INTO `properties` VALUES (18, '1', '3', '姓名', '1', 2, 1);
 INSERT INTO `properties` VALUES (19, '1', '3', '年龄', '1', 3, 1);
 INSERT INTO `properties` VALUES (20, '1', '3', '户籍', '1', 4, 1);
 INSERT INTO `properties` VALUES (21, '1', '3', '身份证号码', '1', 5, 1);
+INSERT INTO `properties` VALUES (22, '6', '35', '现金及存款', '1', 1, 1);
+INSERT INTO `properties` VALUES (23, '6', '35', '应收款', '1', 1, 1);
+INSERT INTO `properties` VALUES (24, '6', '35', '预付账款', '1', 1, 1);
+INSERT INTO `properties` VALUES (25, '6', '35', '存货', '1', 1, 1);
+INSERT INTO `properties` VALUES (26, '6', '35', '其他应收款', '1', 1, 1);
+INSERT INTO `properties` VALUES (27, '6', '35', '流动资产合计', '1', 1, 1);
+INSERT INTO `properties` VALUES (28, '6', '35', '资产合计', '1', 1, 1);
+INSERT INTO `properties` VALUES (29, '6', '35', '有效净资产', '1', 1, 1);
+INSERT INTO `properties` VALUES (30, '6', '35', '应收账款周转次数', '1', 1, 1);
+INSERT INTO `properties` VALUES (31, '6', '35', '存货周转次数', '1', 1, 1);
 
 -- ----------------------------
 -- Table structure for pvalue
@@ -69,43 +79,68 @@ CREATE TABLE `pvalue`  (
   `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT '模板值状态',
   `company_id` bigint(11) DEFAULT NULL COMMENT '公司ID',
   PRIMARY KEY (`vid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of pvalue
 -- ----------------------------
-INSERT INTO `pvalue` VALUES (1, 1, '基本信息', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (2, 1, '实际控制人配偶', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (3, 1, '其他担保人', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (4, 2, '最高额担保企业', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (5, 2, '房产', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (6, 2, '车辆', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (7, 2, '家庭资产', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (8, 3, '基本信息', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (9, 3, '股东结构', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (10, 3, '股东变更记录（2年）', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (11, 3, '工商税务查处', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (12, 3, '动产抵押/股权质押', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (13, 3, '公司过往历史项目', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (14, 3, '关联公司', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (15, 9, '法人', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (16, 10, '张三', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (17, 11, '已婚', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (18, 12, '良好', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (19, 13, '配偶', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (20, 14, '李四', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (21, 15, '已婚', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (22, 16, '良好', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (23, 17, '最高担保人', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (24, 18, '王五', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (25, 19, '18', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (26, 20, '北京', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (27, 21, '1**************', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (28, 17, '最高担保人配偶', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (29, 18, '赵六', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (30, 19, '19', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (31, 20, '北京', 1, NULL, 0);
-INSERT INTO `pvalue` VALUES (32, 21, '2************', 1, NULL, 0);
+INSERT INTO `pvalue` VALUES (1, 1, '基本信息', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (2, 1, '实际控制人配偶', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (3, 1, '其他担保人', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (4, 2, '最高额担保企业', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (5, 2, '房产', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (6, 2, '车辆', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (7, 2, '家庭资产', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (8, 3, '基本信息', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (9, 3, '股东结构', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (10, 3, '股东变更记录（2年）', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (11, 3, '工商税务查处', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (12, 3, '动产抵押/股权质押', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (13, 3, '公司过往历史项目', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (14, 3, '关联公司', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (15, 9, '法人', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (16, 10, '张三', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (17, 11, '已婚', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (18, 12, '良好', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (19, 13, '配偶', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (20, 14, '李四', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (21, 15, '已婚', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (22, 16, '良好', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (23, 17, '最高担保人', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (24, 18, '王五', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (25, 19, '18', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (26, 20, '北京', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (27, 21, '1**************', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (28, 17, '最高担保人配偶', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (29, 18, '赵六', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (30, 19, '19', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (31, 20, '北京', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (32, 21, '2************', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (35, 6, '资产', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (37, 6, '负债', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (38, 6, '利润续表', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (39, 6, '开票销售额', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (40, 6, '其他', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (44, 22, '100', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (45, 23, '90', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (46, 24, '80', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (47, 25, '70', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (48, 26, '60', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (49, 27, '50', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (50, 28, '40', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (51, 29, '30', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (52, 30, '20', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (53, 31, '10', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (54, 22, '100', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (55, 23, '90', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (56, 24, '80', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (57, 25, '70', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (58, 26, '60', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (59, 27, '50', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (60, 28, '40', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (61, 29, '30', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (62, 30, '20', 1, '1', 0);
+INSERT INTO `pvalue` VALUES (63, 31, '10', 1, '1', 0);
 
 -- ----------------------------
 -- Table structure for template
